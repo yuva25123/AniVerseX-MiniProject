@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AniVerseX jQuery AJAX</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="panel">
+      <h1>AniVerseX jQuery + AJAX Module</h1>
+      <p>Use this page to demonstrate GET and POST using jQuery AJAX.</p>
+    </section>
+    <section class="grid">
+      <article class="panel">
+        <h2>Add Anime Recommendation</h2>
+        <form id="animeForm">
+          <input id="title" type="text" placeholder="Anime title" required />
+          <input id="genre" type="text" placeholder="Genre" required />
+          <input id="year" type="number" placeholder="Release year" required />
+          <textarea id="description" rows="4" placeholder="Short description" required></textarea>
+          <button type="submit">Submit with POST</button>
+        </form>
+        <p id="status"></p>
+      </article>
+      <article class="panel">
+        <div class="header-row">
+          <h2>Anime List</h2>
+          <button id="loadAnime">Load with GET</button>
+        </div>
+        <div id="animeList" class="list"></div>
+      </article>
+    </section>
+  </main>
+  <script src="./app.js"></script>
+</body>
+</html>

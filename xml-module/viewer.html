@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AniVerseX XML Viewer</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f172a, #1e293b);
+      color: #f8fafc;
+      padding: 24px;
+    }
+    .wrap {
+      width: min(900px, 100%);
+      margin: 0 auto;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <h1>AniVerseX XML DOM Processing</h1>
+      <p>This page reads anime data from an XML document using DOMParser.</p>
+    </section>
+    <section id="results"></section>
+  </main>
+
+  <script>
+    const xmlText = `<?xml version="1.0" encoding="UTF-8"?>
+<animeCatalog>
+  <anime>
+    <title>Attack on Titan</title>
+    <genre>Action</genre>
+    <year>2013</year>
+    <rating>4.9</rating>
+  </anime>
+  <anime>
+    <title>Naruto</title>
+    <genre>Adventure</genre>
+    <year>2002</year>
+    <rating>4.7</rating>
+  </anime>
+  <anime>
+    <title>Death Note</title>
+    <genre>Thriller</genre>
+    <year>2006</year>
+    <rating>4.8</rating>
+  </anime>
+</animeCatalog>`;
+
+    const xmlDoc = new DOMParser().parseFromString(xmlText, "text/xml");
+    const animeNodes = xmlDoc.getElementsByTagName("anime");
+    const results = document.getElementById("results");
+
+    Array.from(animeNodes).forEach((animeNode) => {
+      const title = animeNode.getElementsByTagName("title")[0].textContent;
+      const genre = animeNode.getElementsByTagName("genre")[0].textContent;
+      const year = animeNode.getElementsByTagName("year")[0].textContent;
+      const rating = animeNode.getElementsByTagName("rating")[0].textContent;
+
+      results.innerHTML += `
+        <article class="card">
+          <h2>${title}</h2>
+          <p><strong>Genre:</strong> ${genre}</p>
+          <p><strong>Year:</strong> ${year}</p>
+          <p><strong>Rating:</strong> ${rating}</p>
+        </article>
+      `;
+    });
+  </script>
+</body>
+</html>
