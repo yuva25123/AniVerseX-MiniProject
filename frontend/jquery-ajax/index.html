@@ -20,7 +20,9 @@
           <input id="title" type="text" placeholder="Anime title" required />
           <input id="genre" type="text" placeholder="Genre" required />
           <input id="year" type="number" placeholder="Release year" required />
+          <input id="rating" type="number" step="0.1" min="0" max="5" placeholder="Rating out of 5" />
           <textarea id="description" rows="4" placeholder="Short description" required></textarea>
+          <textarea id="review" rows="3" placeholder="Short review"></textarea>
           <button type="submit">Submit with POST</button>
         </form>
         <p id="status"></p>

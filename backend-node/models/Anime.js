@@ -15,7 +15,7 @@ const animeSchema = new mongoose.Schema({
     },
     image: {
         type: String,
-        required: true
+        default: ""
     },
     year: {
         type: Number,
@@ -29,7 +29,8 @@ const animeSchema = new mongoose.Schema({
         type: String,
         default: ""
     }
-
+}, {
+    timestamps: true
 });
 
 module.exports = mongoose.model("Anime", animeSchema);

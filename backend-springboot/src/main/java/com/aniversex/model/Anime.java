@@ -1,5 +1,6 @@
 package com.aniversex.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,10 +12,18 @@ public class Anime {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(nullable = false, length = 100)
     private String title;
+
+    @Column(nullable = false, length = 60)
     private String genre;
+
     private int episodes;
+
     private double rating;
+
+    @Column(length = 500)
     private String review;
 
     public Anime() {

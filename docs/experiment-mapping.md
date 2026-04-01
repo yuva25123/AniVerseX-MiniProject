@@ -20,8 +20,8 @@ AniVerseX: Anime Recommendations and Reviews
 - File: `frontend/jquery-ajax/index.html`
 - Backend: `backend-node/server.js`
 - Features:
-  - GET anime list
-  - POST new anime recommendation
+  - live GET anime list from API
+  - live POST new anime recommendation to API
 
 ### 3. JavaScript events and objects
 
@@ -56,7 +56,8 @@ AniVerseX: Anime Recommendations and Reviews
 - Features:
   - entity, repository, controller
   - JSP pages
-  - CRUD-ready structure
+  - create, list, edit, delete flow
+  - MySQL schema script
 
 ### 7. Node.js and Express multi-tier application
 
