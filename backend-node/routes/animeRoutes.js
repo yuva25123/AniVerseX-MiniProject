@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Anime = require("../models/Anime");
+let databaseReady = false;
 
 const sampleAnime = [
   {
@@ -27,7 +28,7 @@ const sampleAnime = [
 
 let memoryAnime = [...sampleAnime];
 
-const isDatabaseReady = () => Boolean(router.get("databaseReady"));
+const isDatabaseReady = () => databaseReady;
 
 const normalizeAnimePayload = (payload) => ({
   title: payload.title?.trim(),
@@ -128,3 +129,6 @@ router.delete("/:id", async (req, res) => {
 });
 
 module.exports = router;
+module.exports.setDatabaseReady = (value) => {
+  databaseReady = Boolean(value);
+};

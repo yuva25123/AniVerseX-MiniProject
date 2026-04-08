@@ -12,11 +12,11 @@ app.use(express.json());
 
 mongoose.connect(mongoUri)
   .then(() => {
-    animeRoutes.set("databaseReady", true);
+    animeRoutes.setDatabaseReady(true);
     console.log("MongoDB connected");
   })
   .catch((err) => {
-    animeRoutes.set("databaseReady", false);
+    animeRoutes.setDatabaseReady(false);
     console.log("MongoDB unavailable. Falling back to in-memory data store.");
     console.log(err.message);
   });
