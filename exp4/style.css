@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  font-family: Cambria, Georgia, serif;
+  background: linear-gradient(135deg, #14213d, #223a5e);
+  color: #f8f9fa;
+}
+.app {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+  padding: 32px 0 40px;
+}
+.hero, .card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 18px;
+}
+.hero {
+  padding: 24px;
+  margin-bottom: 18px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.card {
+  padding: 18px;
+}
+input, textarea, button {
+  width: 100%;
+  padding: 11px 12px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+button {
+  background: #fca311;
+  color: #111;
+  font-weight: 700;
+  cursor: pointer;
+}
+.anime-card {
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.18);
+}
+@media (max-width: 800px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

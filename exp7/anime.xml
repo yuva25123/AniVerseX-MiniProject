@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<animeCatalog>
+  <anime>
+    <title>Attack on Titan</title>
+    <genre>Action</genre>
+    <year>2013</year>
+    <rating>4.9</rating>
+  </anime>
+  <anime>
+    <title>Naruto</title>
+    <genre>Adventure</genre>
+    <year>2002</year>
+    <rating>4.7</rating>
+  </anime>
+  <anime>
+    <title>Death Note</title>
+    <genre>Thriller</genre>
+    <year>2006</year>
+    <rating>4.8</rating>
+  </anime>
+</animeCatalog>
